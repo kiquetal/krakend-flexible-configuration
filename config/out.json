@@ -1,0 +1,27 @@
+    {
+        "version": 3,
+        "port": 8090,
+        "extra_config": {"security/http":{"allowed_hosts":[],"ssl_certificate":"/opt/rsa.cert","ssl_private_key":"/opt/rsa.key","ssl_proxy_headers":{"X-Forwarded-Proto":"https"}}},
+        "host": ["https://catalog-api-01.srv","https://catalog-api-02.srv","https://catalog-api-03.srv"],
+        "endpoints": [
+            
+            
+            {
+            "endpoint": "/users/{id}",
+            "backend": [
+                {
+                    "url_pattern": "/v1/users?userId={id}"
+                }
+            ]}
+            
+            ,
+            {
+            "endpoint": "/posts/{id}",
+            "backend": [
+                {
+                    "url_pattern": "/posts?postId={id}"
+                }
+            ]}
+            
+        ]
+    }

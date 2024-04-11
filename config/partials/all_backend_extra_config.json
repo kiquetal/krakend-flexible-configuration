@@ -1,0 +1,12 @@
+{
+    "$schema": "https://www.krakend.io/schema/v2.4/backend_extra_config.json",
+    "qos/ratelimit/proxy": {
+        "max_rate": 100,
+        "capacity": 100
+    },
+    "qos/circuit-breaker": {
+        "interval": 10,
+        "max_errors": 5,
+        "timeout": 5
+    }
+}

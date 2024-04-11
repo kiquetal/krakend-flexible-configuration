@@ -1,0 +1,13 @@
+version: "3"
+services:
+  krakend:
+    image: devopsfaith/krakend:watch
+    volumes:
+      - "./config:/etc/krakend"
+    environment:
+      - FC_ENABLE=1
+      - FC_SETTINGS=/etc/krakend/settings 
+      - FC_PARTIALS=/etc/krakend/partials 
+      - FC_OUT=/etc/krakend/out.json
+    command: ["run","-dc","/etc/krakend/krakend.tmpl"]
+
