@@ -1,0 +1,12 @@
+{
+    "routes": [
+        {
+            "endpoint": "/v1/py/upselling/users/{id}",
+            "backend": "/users?userId={id}"
+        },
+        {
+            "endpoint": "/v1/py/upselling/posts/{id}",
+            "backend": "/posts?postId={id}"
+        }
+    ]
+}

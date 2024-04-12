@@ -17,5 +17,12 @@
             {{if $idx}},{{end}}
             {{ template "endpoint" $endpoint }}
 	    {{ end }}
+	    {{ range $idx, $endpoint := .api_py.routes }}
+            {{if $idx}},{{end}}
+            {{ template "endpoint" $endpoint }}
+            {{ end }}
+
+
+
         ]
     }
