@@ -22,10 +22,11 @@ jobs:
     - name: Copy generated file from container
       run: |
         docker cp krakend-flexible-configuration-krakend-1:/etc/krakend/out.json .
+        jq -r . out.json > out-pretty.json
 
     - name: Upload asset
       uses: actions/upload-artifact@v2
       with:
-        name: out.json
-        path: out.json
+        name: out-pretty.json
+        path: out-pretty.json
 

@@ -16,7 +16,7 @@
             {{ range $idx, $endpoint := .api_gt.routes }}
             {{if $idx}},{{end}}
             {{ template "endpoint" $endpoint }}
-	    {{ end }}
+	    {{ end }},
 	    {{ range $idx, $endpoint := .api_py.routes }}
             {{if $idx}},{{end}}
             {{ template "endpoint" $endpoint }}
