@@ -21,7 +21,7 @@ jobs:
 
     - name: Copy generated file from container
       run: |
-        docker cp krakend:/etc/krakend/out.json .
+        docker cp krakend-flexible-configuration-krakend-1:/etc/krakend/out.json .
 
     - name: Upload asset
       uses: actions/upload-artifact@v2
