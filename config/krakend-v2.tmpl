@@ -1,0 +1,21 @@
+{{ define "endpoint" }}
+{
+    "endpoint": "{{ .endpoint }}",
+    "backend": [
+        {
+            "url_pattern": "{{ .backend }}"
+        }
+    ]
+}
+{{ end }} 
+   {
+        "version": 3,
+        "port": {{ .service.port }},
+        "extra_config": {{ marshal .service.extra_config }},
+        "endpoints": [
+            {{ range $idx, $endpoint := .api_gt.routes }}
+            {{if $idx}},{{end}}
+            {{ template "endpoint" $endpoint }}
+	    {{ end }}
+        ]
+    }
